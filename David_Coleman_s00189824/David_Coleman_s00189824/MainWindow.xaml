@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:David_Coleman_s00189824"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
+        
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="Tempo">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Image Source="{Binding OSImage}" Width="75"/>
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" Margin="5" FontSize="25"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,9 +27,9 @@
             <ColumnDefinition Width="73*"/>
             <ColumnDefinition Width="201*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="Lbxphones" HorizontalAlignment="Left" Height="270" Margin="47,82,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1" SelectionChanged="Lbxphones_SelectionChanged"/>
+        <ListBox x:Name="Lbxphones" HorizontalAlignment="Left" Height="270" Margin="47,82,0,0" VerticalAlignment="Top" Width="292" Grid.Column="1" SelectionChanged="Lbxphones_SelectionChanged" ItemTemplate="{StaticResource Tempo}"/>
         <TextBlock x:Name="TblkPrice" HorizontalAlignment="Left" Margin="455,82,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="44" Width="181" Grid.Column="1" Grid.ColumnSpan="3"/>
-        <Rectangle x:Name="ImgPhone" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="162" Margin="455,154,0,0" Stroke="Black" VerticalAlignment="Top" Width="270" RenderTransformOrigin="-0.295,-0.27">
+        <Rectangle x:Name="ImgPhone" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="206" Margin="455,146,0,0" Stroke="Black" VerticalAlignment="Top" Width="270" RenderTransformOrigin="-0.295,-0.27">
             <Rectangle.Fill>
                 <ImageBrush/>
             </Rectangle.Fill>
